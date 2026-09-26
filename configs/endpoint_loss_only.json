@@ -1,0 +1,8 @@
+{
+  "pair_types": [
+    "complete"
+  ],
+  "lambda_skip": 0.0,
+  "lambda_adj": 0.0,
+  "lambda_cyc": 0.0
+}

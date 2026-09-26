@@ -1,0 +1,12 @@
+{
+  "training_eras": [
+    "OBI",
+    "Bronze"
+  ],
+  "pair_types": [
+    "adjacent"
+  ],
+  "train_survival": false,
+  "lambda_full": 0.0,
+  "lambda_skip": 0.0
+}

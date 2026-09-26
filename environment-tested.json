@@ -1,0 +1,17 @@
+{
+  "python": "3.9.6 (default, Feb  3 2024, 15:58:27) \n[Clang 15.0.0 (clang-1500.3.9.4)]",
+  "platform": "macOS-14.5-arm64-arm-64bit",
+  "packages": {
+    "torch": "2.8.0",
+    "torchdiffeq": "0.2.5",
+    "numpy": "2.0.2",
+    "scipy": "1.13.1",
+    "scikit-learn": "1.6.1",
+    "Pillow": "11.3.0",
+    "opencv-python": "4.12.0.88",
+    "scikit-image": "0.24.0",
+    "pytest": "8.4.2",
+    "CairoSVG": "2.8.2",
+    "cairocffi": "1.7.1"
+  }
+}

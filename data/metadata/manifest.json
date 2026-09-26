@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "source": "CCAMC ancient and modern Chinese character collection",
+  "source_url": "http://ccamc.org/cjkv_oaccgd.php",
+  "occurrences": 158620,
+  "linked_occurrences": 70227,
+  "image_files": 41931,
+  "cached_source_pages": 29650,
+  "bibliography_pages": 11592,
+  "record_path": "metadata/occurrences.jsonl.gz",
+  "csv_path": "metadata/occurrences.csv.gz",
+  "asset_path_base": "raw/",
+  "source_categories": [
+    "傳抄古文字",
+    "敦煌異體字",
+    "楚簡",
+    "甲骨文",
+    "秦簡",
+    "金文"
+  ],
+  "model_input_index_path": "metadata/model_input_index.jsonl.gz",
+  "category_label_path": "metadata/category_labels.json"
+}

@@ -1,0 +1,6 @@
+{
+  "disabled_modalities": [
+    "context",
+    "spatiotemporal"
+  ]
+}

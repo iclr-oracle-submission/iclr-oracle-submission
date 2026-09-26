@@ -1,0 +1,650 @@
+{
+  "occurrences": 158620,
+  "unique_characters": 4717,
+  "occurrences_by_script": {
+    "傳抄古文字": 26998,
+    "敦煌異體字": 4644,
+    "楚簡": 52347,
+    "甲骨文": 25768,
+    "秦簡": 4950,
+    "金文": 43913
+  },
+  "unique_characters_by_script": {
+    "傳抄古文字": 3394,
+    "敦煌異體字": 1233,
+    "楚簡": 2255,
+    "甲骨文": 1816,
+    "秦簡": 1921,
+    "金文": 4238
+  },
+  "unique_source_image_urls": 91399,
+  "unique_local_image_paths": 41931,
+  "field_coverage": {
+    "with_local_image": 70227,
+    "with_dynasty": 158620,
+    "with_period": 158620,
+    "with_source_book": 101791,
+    "with_collection_number": 110918,
+    "with_vessel_name": 43913,
+    "with_version_subgroup": 25768
+  },
+  "period_counts": [
+    {
+      "script_type": "傳抄古文字",
+      "period": "傳抄古文字",
+      "occurrences": 26998
+    },
+    {
+      "script_type": "敦煌異體字",
+      "period": "敦煌異體字",
+      "occurrences": 4644
+    },
+    {
+      "script_type": "楚簡",
+      "period": "上海博物館藏战国楚竹書",
+      "occurrences": 7698
+    },
+    {
+      "script_type": "楚簡",
+      "period": "九店楚簡",
+      "occurrences": 1134
+    },
+    {
+      "script_type": "楚簡",
+      "period": "五里牌406號墓竹簡",
+      "occurrences": 28
+    },
+    {
+      "script_type": "楚簡",
+      "period": "信陽1號墓楚簡",
+      "occurrences": 844
+    },
+    {
+      "script_type": "楚簡",
+      "period": "包山楚簡",
+      "occurrences": 11094
+    },
+    {
+      "script_type": "楚簡",
+      "period": "天星觀1號墓楚簡",
+      "occurrences": 3010
+    },
+    {
+      "script_type": "楚簡",
+      "period": "子彈庫楚帛書",
+      "occurrences": 1007
+    },
+    {
+      "script_type": "楚簡",
+      "period": "安徽大學藏战國竹簡",
+      "occurrences": 2206
+    },
+    {
+      "script_type": "楚簡",
+      "period": "德山夕陽坡2號墓竹簡",
+      "occurrences": 48
+    },
+    {
+      "script_type": "楚簡",
+      "period": "战国楚简",
+      "occurrences": 117
+    },
+    {
+      "script_type": "楚簡",
+      "period": "新蔡葛陵楚墓竹簡",
+      "occurrences": 4852
+    },
+    {
+      "script_type": "楚簡",
+      "period": "曾侯乙墓竹簡",
+      "occurrences": 2834
+    },
+    {
+      "script_type": "楚簡",
+      "period": "望山楚簡",
+      "occurrences": 1457
+    },
+    {
+      "script_type": "楚簡",
+      "period": "磚瓦廠370號墓竹簡",
+      "occurrences": 127
+    },
+    {
+      "script_type": "楚簡",
+      "period": "秦家嘴竹簡",
+      "occurrences": 344
+    },
+    {
+      "script_type": "楚簡",
+      "period": "范家坡27號墓竹簡",
+      "occurrences": 42
+    },
+    {
+      "script_type": "楚簡",
+      "period": "郭店楚墓竹簡",
+      "occurrences": 15139
+    },
+    {
+      "script_type": "楚簡",
+      "period": "長沙仰天湖25號墓竹簡",
+      "occurrences": 253
+    },
+    {
+      "script_type": "楚簡",
+      "period": "雨臺山21號墓竹律管墨書文字",
+      "occurrences": 56
+    },
+    {
+      "script_type": "楚簡",
+      "period": "香港中文大學文物館藏簡牘",
+      "occurrences": 54
+    },
+    {
+      "script_type": "楚簡",
+      "period": "馬山1號墓竹簡",
+      "occurrences": 3
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "午組",
+      "occurrences": 5
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "子組",
+      "occurrences": 41
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村北系-亞組",
+      "occurrences": 1
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村北系-何組",
+      "occurrences": 934
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村北系-出組",
+      "occurrences": 685
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村北系-午組",
+      "occurrences": 97
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村北系-子組",
+      "occurrences": 503
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村北系-無分組信息",
+      "occurrences": 11053
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村北系-賓組",
+      "occurrences": 6169
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村北系-黃組",
+      "occurrences": 1088
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村北系-𠂤賓間",
+      "occurrences": 434
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村南系-亞組",
+      "occurrences": 4
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村南系-午組",
+      "occurrences": 21
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村南系-子組",
+      "occurrences": 27
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村南系-歷無名間",
+      "occurrences": 73
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村南系-歷組",
+      "occurrences": 1449
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村南系-無分組信息",
+      "occurrences": 186
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村南系-無名組",
+      "occurrences": 1249
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村南系-無名黃間",
+      "occurrences": 52
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村南系-黃組",
+      "occurrences": 52
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "村南系-𠂤歷間",
+      "occurrences": 139
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "無分組信息",
+      "occurrences": 334
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "西周",
+      "occurrences": 2
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "黃組",
+      "occurrences": 110
+    },
+    {
+      "script_type": "甲骨文",
+      "period": "𠂤組",
+      "occurrences": 1060
+    },
+    {
+      "script_type": "秦簡",
+      "period": "秦代简牍",
+      "occurrences": 4950
+    },
+    {
+      "script_type": "金文",
+      "period": "商代晚期",
+      "occurrences": 2194
+    },
+    {
+      "script_type": "金文",
+      "period": "商代晚期或西周早期",
+      "occurrences": 374
+    },
+    {
+      "script_type": "金文",
+      "period": "战国",
+      "occurrences": 536
+    },
+    {
+      "script_type": "金文",
+      "period": "战国中期",
+      "occurrences": 569
+    },
+    {
+      "script_type": "金文",
+      "period": "战国中期偏晚",
+      "occurrences": 10
+    },
+    {
+      "script_type": "金文",
+      "period": "战国中期或晚期",
+      "occurrences": 4
+    },
+    {
+      "script_type": "金文",
+      "period": "战国早期",
+      "occurrences": 1186
+    },
+    {
+      "script_type": "金文",
+      "period": "战国早期或中期",
+      "occurrences": 4
+    },
+    {
+      "script_type": "金文",
+      "period": "战国晚期",
+      "occurrences": 2492
+    },
+    {
+      "script_type": "金文",
+      "period": "春秋",
+      "occurrences": 941
+    },
+    {
+      "script_type": "金文",
+      "period": "春秋中期",
+      "occurrences": 632
+    },
+    {
+      "script_type": "金文",
+      "period": "春秋中期偏晚",
+      "occurrences": 33
+    },
+    {
+      "script_type": "金文",
+      "period": "春秋中期或晚期",
+      "occurrences": 14
+    },
+    {
+      "script_type": "金文",
+      "period": "春秋早期",
+      "occurrences": 2839
+    },
+    {
+      "script_type": "金文",
+      "period": "春秋晚期",
+      "occurrences": 3297
+    },
+    {
+      "script_type": "金文",
+      "period": "春秋晚期或战国早期",
+      "occurrences": 16
+    },
+    {
+      "script_type": "金文",
+      "period": "西周",
+      "occurrences": 278
+    },
+    {
+      "script_type": "金文",
+      "period": "西周中期",
+      "occurrences": 8654
+    },
+    {
+      "script_type": "金文",
+      "period": "西周中期偏晚",
+      "occurrences": 214
+    },
+    {
+      "script_type": "金文",
+      "period": "西周中期或晚期",
+      "occurrences": 13
+    },
+    {
+      "script_type": "金文",
+      "period": "西周早期",
+      "occurrences": 7747
+    },
+    {
+      "script_type": "金文",
+      "period": "西周早期或中期",
+      "occurrences": 251
+    },
+    {
+      "script_type": "金文",
+      "period": "西周晚期",
+      "occurrences": 11542
+    },
+    {
+      "script_type": "金文",
+      "period": "西周晚期或春秋早期",
+      "occurrences": 73
+    }
+  ],
+  "dynasty_counts": [
+    {
+      "script_type": "傳抄古文字",
+      "dynasty": "傳抄古文字",
+      "occurrences": 26998
+    },
+    {
+      "script_type": "敦煌異體字",
+      "dynasty": "敦煌異體字",
+      "occurrences": 4644
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "上海博物館藏战国楚竹書",
+      "occurrences": 7698
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "九店楚簡",
+      "occurrences": 1134
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "五里牌406號墓竹簡",
+      "occurrences": 28
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "信陽1號墓楚簡",
+      "occurrences": 844
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "包山楚簡",
+      "occurrences": 11094
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "天星觀1號墓楚簡",
+      "occurrences": 3010
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "子彈庫楚帛書",
+      "occurrences": 1007
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "安徽大學藏战國竹簡",
+      "occurrences": 2206
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "德山夕陽坡2號墓竹簡",
+      "occurrences": 48
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "战国楚简",
+      "occurrences": 117
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "新蔡葛陵楚墓竹簡",
+      "occurrences": 4852
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "曾侯乙墓竹簡",
+      "occurrences": 2834
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "望山楚簡",
+      "occurrences": 1457
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "磚瓦廠370號墓竹簡",
+      "occurrences": 127
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "秦家嘴竹簡",
+      "occurrences": 344
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "范家坡27號墓竹簡",
+      "occurrences": 42
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "郭店楚墓竹簡",
+      "occurrences": 15139
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "長沙仰天湖25號墓竹簡",
+      "occurrences": 253
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "雨臺山21號墓竹律管墨書文字",
+      "occurrences": 56
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "香港中文大學文物館藏簡牘",
+      "occurrences": 54
+    },
+    {
+      "script_type": "楚簡",
+      "dynasty": "馬山1號墓竹簡",
+      "occurrences": 3
+    },
+    {
+      "script_type": "甲骨文",
+      "dynasty": "商代晚期-其他",
+      "occurrences": 11575
+    },
+    {
+      "script_type": "甲骨文",
+      "dynasty": "商代晚期-王卜辞",
+      "occurrences": 14193
+    },
+    {
+      "script_type": "秦簡",
+      "dynasty": "秦代简牍",
+      "occurrences": 4950
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "商代晚期",
+      "occurrences": 2194
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "商代晚期或西周早期",
+      "occurrences": 374
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "战国",
+      "occurrences": 536
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "战国中期",
+      "occurrences": 569
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "战国中期偏晚",
+      "occurrences": 10
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "战国中期或晚期",
+      "occurrences": 4
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "战国早期",
+      "occurrences": 1186
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "战国早期或中期",
+      "occurrences": 4
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "战国晚期",
+      "occurrences": 2492
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "春秋",
+      "occurrences": 941
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "春秋中期",
+      "occurrences": 632
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "春秋中期偏晚",
+      "occurrences": 33
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "春秋中期或晚期",
+      "occurrences": 14
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "春秋早期",
+      "occurrences": 2839
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "春秋晚期",
+      "occurrences": 3297
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "春秋晚期或战国早期",
+      "occurrences": 16
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "西周",
+      "occurrences": 278
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "西周中期",
+      "occurrences": 8654
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "西周中期偏晚",
+      "occurrences": 214
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "西周中期或晚期",
+      "occurrences": 13
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "西周早期",
+      "occurrences": 7747
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "西周早期或中期",
+      "occurrences": 251
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "西周晚期",
+      "occurrences": 11542
+    },
+    {
+      "script_type": "金文",
+      "dynasty": "西周晚期或春秋早期",
+      "occurrences": 73
+    }
+  ]
+}

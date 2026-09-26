@@ -1,0 +1,1140 @@
+{
+  "schema_version": 1,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "experiments": [
+    {
+      "id": "train_default",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/default.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/default/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_without_skip",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/without_skip.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/without_skip/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_without_full",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/without_full.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/without_full/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_without_cyc",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/without_cyc.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/without_cyc/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_complete_only",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/complete_only.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/complete_only/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_coarse_time",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/coarse_time.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/coarse_time/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_static_manifold",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/static_manifold.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/static_manifold/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_endpoint_loss_only",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/endpoint_loss_only.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/endpoint_loss_only/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_no_survival",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/no_survival.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/no_survival/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_no_dynamic_features",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/no_dynamic_features.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/no_dynamic_features/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_attention_144_heads",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/attention_144_heads.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/attention_144_heads/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_ccamc_partial",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/ccamc_partial.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/ccamc_partial/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_without_visual",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/without_visual.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/without_visual/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_without_structural",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/without_structural.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/without_structural/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_without_semantic",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/without_semantic.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/without_semantic/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_without_context",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/without_context.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/without_context/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_without_spatiotemporal",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/without_spatiotemporal.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/without_spatiotemporal/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_dimension_64",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/dimension_64.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/dimension_64/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_dimension_128",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/dimension_128.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/dimension_128/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_dimension_256",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/dimension_256.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/dimension_256/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_dimension_512",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/dimension_512.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/dimension_512/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_pairs_1500",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/pairs_1500.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/pairs_1500/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_pairs_3000",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/pairs_3000.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/pairs_3000/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_pairs_6000",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/pairs_6000.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/pairs_6000/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_pairs_10000",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/pairs_10000.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/pairs_10000/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_pairs_13700",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/pairs_13700.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/pairs_13700/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_eras_2",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/eras_2.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/eras_2/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_eras_3",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/eras_3.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/eras_3/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_eras_4",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/eras_4.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/eras_4/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "train_eras_5",
+      "paper_section": "Training / RQ2 / dimension and data-scale studies",
+      "entrypoint": "src/train.py",
+      "required_inputs": [
+        "prepared_data"
+      ],
+      "arguments": [
+        "--config",
+        "configs/eras_5.json",
+        "--data_dir",
+        "{prepared_data}",
+        "--output_dir",
+        "{output}/eras_5/seed{seed}",
+        "--seed",
+        "{seed}"
+      ],
+      "protocol": "Character-disjoint validation selects each stage; store actual sampled pair IDs; requested count must exist."
+    },
+    {
+      "id": "evaluate_appendix_h",
+      "paper_section": "Main results / CBED / backward micro-analysis",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}"
+      ],
+      "protocol": "Bronze-path mean coordinates, exp(-distance)."
+    },
+    {
+      "id": "evaluate_stepwise_modern",
+      "paper_section": "Main results / CBED / backward micro-analysis",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths",
+        "thresholds"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}",
+        "--verification_mode",
+        "stepwise_modern",
+        "--pruning_thresholds",
+        "{thresholds}"
+      ],
+      "protocol": "Main text: actual modern-to-ancient occurrence prototypes; validation-fitted distance cutoffs."
+    },
+    {
+      "id": "evaluate_no_backward",
+      "paper_section": "Main results / CBED / backward micro-analysis",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}",
+        "--disable_backward"
+      ],
+      "protocol": "Same forward population; disable reverse verification."
+    },
+    {
+      "id": "evaluate_no_cascade",
+      "paper_section": "Main results / CBED / backward micro-analysis",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}",
+        "--disable_cascade"
+      ],
+      "protocol": "Direct Regular retrieval."
+    },
+    {
+      "id": "evaluate_no_pruning",
+      "paper_section": "Main results / CBED / backward micro-analysis",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}",
+        "--verification_mode",
+        "stepwise_modern",
+        "--disable_pruning"
+      ],
+      "protocol": "Same prototype paths without threshold pruning."
+    },
+    {
+      "id": "evaluate_no_survival",
+      "paper_section": "Main results / CBED / backward micro-analysis",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}",
+        "--disable_survival"
+      ],
+      "protocol": "Retain all queries before retrieval."
+    },
+    {
+      "id": "evaluate_forward_flow",
+      "paper_section": "Main results / CBED / backward micro-analysis",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}",
+        "--forward_mode",
+        "flow"
+      ],
+      "protocol": "ODE-transport retrieval version."
+    },
+    {
+      "id": "evaluate_eras_2",
+      "paper_section": "Intermediate eras",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}",
+        "--active_eras",
+        "Regular"
+      ],
+      "protocol": "Training era config and inference eras must be matched."
+    },
+    {
+      "id": "evaluate_eras_3",
+      "paper_section": "Intermediate eras",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}",
+        "--active_eras",
+        "Bronze",
+        "Regular"
+      ],
+      "protocol": "Training era config and inference eras must be matched."
+    },
+    {
+      "id": "evaluate_eras_4",
+      "paper_section": "Intermediate eras",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}",
+        "--active_eras",
+        "Bronze",
+        "Seal",
+        "Regular"
+      ],
+      "protocol": "Training era config and inference eras must be matched."
+    },
+    {
+      "id": "evaluate_eras_5",
+      "paper_section": "Intermediate eras",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}",
+        "--active_eras",
+        "Bronze",
+        "Seal",
+        "Clerical",
+        "Regular"
+      ],
+      "protocol": "Training era config and inference eras must be matched."
+    },
+    {
+      "id": "fit_pruning",
+      "paper_section": "CBED step-wise pruning",
+      "entrypoint": "scripts/fit_pruning_thresholds.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths"
+      ],
+      "arguments": [],
+      "protocol": "Validation partition only, fixed quantile 0.95; never use test distances."
+    },
+    {
+      "id": "benchmark_FGCCES",
+      "paper_section": "RQ1 / cross-benchmark",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}"
+      ],
+      "protocol": "External manifests require source-bearing label-free features and frozen official populations."
+    },
+    {
+      "id": "benchmark_HUST-OBS",
+      "paper_section": "RQ1 / cross-benchmark",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths",
+        "query_manifest"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}",
+        "--query_manifest",
+        "{query_manifest}"
+      ],
+      "protocol": "External manifests require source-bearing label-free features and frozen official populations."
+    },
+    {
+      "id": "benchmark_EVOBC",
+      "paper_section": "RQ1 / cross-benchmark",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths",
+        "query_manifest"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}",
+        "--query_manifest",
+        "{query_manifest}"
+      ],
+      "protocol": "External manifests require source-bearing label-free features and frozen official populations."
+    },
+    {
+      "id": "pictobi_four_choice",
+      "paper_section": "PictOBI-20k",
+      "entrypoint": "scripts/evaluate_pictobi.py",
+      "required_inputs": [
+        "quiz",
+        "predictions"
+      ],
+      "arguments": [],
+      "protocol": "Score official four-choice questions. Glyph-gallery CBED does not define a photo-choice adapter; actual association predictions are required."
+    },
+    {
+      "id": "diffusion_pf",
+      "paper_section": "Diffusion PF-ODE comparison",
+      "entrypoint": "scripts/train_probability_flow.py",
+      "required_inputs": [
+        "encoder_checkpoint",
+        "prepared_data"
+      ],
+      "arguments": [],
+      "protocol": "Frozen shared encoder; actual VP diffusion/denoising score matching; noise time separate from era time."
+    },
+    {
+      "id": "cross_era",
+      "paper_section": "Cross-era retrieval matrix",
+      "entrypoint": "scripts/evaluate_retrieval.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data"
+      ],
+      "arguments": [],
+      "protocol": "Run every distinct source/target era pair; all source occurrences remain in denominators."
+    },
+    {
+      "id": "manifold",
+      "paper_section": "Continuity, invertibility, semantic grouping, parallelism, local volume and velocity",
+      "entrypoint": "scripts/analyze_manifold.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data"
+      ],
+      "arguments": [],
+      "protocol": "Local sampled Jacobians do not prove global Lipschitz or volume preservation; grouping requires actual annotated fields."
+    },
+    {
+      "id": "attention_patching",
+      "paper_section": "Attention circuits / causal ablation / superposition",
+      "entrypoint": "scripts/analyze_representations.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data"
+      ],
+      "arguments": [],
+      "protocol": "Attention uses five modality tokens; intervention zeros post-layer modality activation. Effective-modality PI computed from actual perturbation effects."
+    },
+    {
+      "id": "latent_arithmetic",
+      "paper_section": "Latent arithmetic",
+      "entrypoint": "scripts/latent_arithmetic.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "expressions"
+      ],
+      "arguments": [],
+      "protocol": "Each expression specifies real occurrence IDs, coefficients and fixed reference gallery."
+    },
+    {
+      "id": "prediction_analysis",
+      "paper_section": "Calibration / scribal groups / error strata / multi-round / backward false positives",
+      "entrypoint": "scripts/score_predictions.py",
+      "required_inputs": [
+        "population",
+        "predictions"
+      ],
+      "arguments": [],
+      "protocol": "Trials are separate supplied predictions; Top-K is not multi-round success. Error types and scribal groups require source annotations."
+    },
+    {
+      "id": "expert",
+      "paper_section": "Expert evaluation",
+      "entrypoint": "scripts/summarize_expert_ratings.py",
+      "required_inputs": [
+        "ratings"
+      ],
+      "arguments": [],
+      "protocol": "Actual independent expert ratings only; no generated expert scores."
+    },
+    {
+      "id": "five_runs",
+      "paper_section": "Mean/std and paired comparison",
+      "entrypoint": "scripts/summarize_runs.py",
+      "required_inputs": [
+        "run_metrics"
+      ],
+      "arguments": [],
+      "protocol": "Same frozen population and aligned seeds; report observed run count."
+    },
+    {
+      "id": "pictobi_adapter",
+      "paper_section": "PictOBI conventional association adapter",
+      "entrypoint": "scripts/pictobi_association.py",
+      "required_inputs": [
+        "encoder_checkpoint",
+        "manifest"
+      ],
+      "arguments": [],
+      "protocol": "Training uses source-bearing train/val photo tasks; evaluate held-out characters; frozen encoder shared exactly."
+    },
+    {
+      "id": "evolution_shapes",
+      "paper_section": "Pre-exploration structural trajectory clusters",
+      "entrypoint": "scripts/analyze_evolution_shapes.py",
+      "required_inputs": [
+        "manifest"
+      ],
+      "arguments": [],
+      "protocol": "Seven explicit geometry observables; annotated stroke counts preferred; skeleton segment fallback identified; missing eras retained."
+    },
+    {
+      "id": "visual_occlusion",
+      "paper_section": "Visual saliency / equal-ink occlusion",
+      "entrypoint": "scripts/visual_occlusion.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data"
+      ],
+      "arguments": [],
+      "protocol": "Recompute geometry features after finite patch occlusion; high/low perturbations remove equal ink pixels."
+    },
+    {
+      "id": "efficiency",
+      "paper_section": "Computational efficiency",
+      "entrypoint": "scripts/benchmark_efficiency.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data"
+      ],
+      "arguments": [],
+      "protocol": "Synchronized timed encoder/flow inference, actual parameters and GPU peak memory."
+    },
+    {
+      "id": "manifold_projection",
+      "paper_section": "Manifold neighborhoods / trajectory visualization",
+      "entrypoint": "scripts/project_manifold.py",
+      "required_inputs": [
+        "trajectories"
+      ],
+      "arguments": [],
+      "protocol": "PCA or t-SNE on actual exported coordinates with source-occurrence IDs."
+    },
+    {
+      "id": "paired_predictions",
+      "paper_section": "Baseline comparison and statistical significance",
+      "entrypoint": "scripts/compare_predictions.py",
+      "required_inputs": [
+        "population",
+        "method_a",
+        "method_b"
+      ],
+      "arguments": [],
+      "protocol": "Query-level paired exact McNemar and optional t-test; does not substitute for seed-level tests."
+    }
+  ]
+}

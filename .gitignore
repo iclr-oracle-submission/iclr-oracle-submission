@@ -1,0 +1,18 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.DS_Store
+
+# Generated data, checkpoints and experiment outputs
+/prepared_data/
+/prepared_ccamc/
+/runs/
+/results/
+/eval_results/
+*.pt
+*.pth
+*.zip
+*.tar.gz

@@ -1,0 +1,4 @@
+{
+  "manifold_num_heads": 12,
+  "attention_inner_dim": 384
+}
