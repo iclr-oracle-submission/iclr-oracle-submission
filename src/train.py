@@ -1,4 +1,4 @@
-"""Decoupled training, Appendix G Eqs.11-12 and Table28.
+"""Decoupled training, Appendix F and Appendix M.
 
 Evolution and evidenced survival populations are distinct. Model selection uses
 validation loss for each phase. Resume checkpoints include phase and RNG state.
@@ -58,7 +58,9 @@ def evolution_losses(model, batch, config, device):
             ("loss_full", "complete"),
         ]
     }
-    components["loss_cyc"] = (reconstructed - z).square().sum(-1).mean()
+    components["loss_cyc"] = compute_masked_mse(
+        reconstructed, z, masks["is_adjacent"] | masks["is_skip"]
+    )
     total = sum(getattr(config, "lambda_" + k[5:]) * v for k, v in components.items())
     return total, components
 
@@ -86,7 +88,7 @@ class TrainingObjective(torch.nn.Module):
             sizes = [
                 sum(v == kind for v in batch["pair_type"])
                 for kind in ("adjacent", "skip", "complete")
-            ] + [len(batch["features_src"])]
+            ] + [sum(v in ("adjacent", "skip") for v in batch["pair_type"])]
         else:
             raw = survival_loss(self.model, batch, self.device)
             loss = self.config.lambda_surv * raw
@@ -161,6 +163,8 @@ def run_epoch(model, loader, config, device, phase, optimizer=None, objective=No
                     "loss_full": "complete",
                 }[key]
                 count = sum(v == kind for v in batch["pair_type"])
+            elif key == "loss_cyc":
+                count = sum(v in ("adjacent", "skip") for v in batch["pair_type"])
             else:
                 count = n
             sums[key] = sums.get(key, 0.0) + float(value.detach()) * count

@@ -1,4 +1,4 @@
-"""Squared L2 objectives averaged over eligible examples, Appendix G Eq.11.
+"""Squared L2 objectives averaged over eligible examples, Appendix F Eqs.8-11.
 
 Complete chains use OBI -> Regular endpoints, not a sum of adjacent losses.
 Cycle inputs must be obtained by backward(forward(z)), not backward(target).
@@ -97,5 +97,7 @@ class MSEFLoss(nn.Module):
             k: distance_loss(predicted, target, m, self.reduction)
             for k, m in [("adj", is_adjacent), ("skip", is_skip), ("full", is_complete)]
         }
-        losses["cyc"] = distance_loss(reconstructed, original, None, self.reduction)
+        losses["cyc"] = distance_loss(
+            reconstructed, original, is_adjacent | is_skip, self.reduction
+        )
         return sum(self.weights[k] * v for k, v in losses.items()), losses

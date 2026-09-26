@@ -34,3 +34,5 @@ python scripts/score_predictions.py --population population.jsonl --predictions 
 ```
 
 Official external populations and predictions must be provided for external baselines. External baseline comparisons use supplied predictions aligned to the same frozen query population. Expert evaluation uses independent ratings. The data package contains descriptive corpus statistics; benchmark metrics are computed from trained checkpoints and evaluation predictions.
+
+The final-manuscript default is `evaluate_observed_checkpoint` (Appendix G). Fit its thresholds with the default calibration verifier. Legacy `evaluate_appendix_h` and `evaluate_stepwise_modern` are explicitly identified comparisons; their scores and calibrated thresholds are not interchangeable with the default.

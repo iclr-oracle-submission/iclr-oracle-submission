@@ -135,6 +135,8 @@ def test_cbed_mean_coordinates_before_distance_and_no_global_injection():
     cb = CascadedBidirectionalDecipherment(
         FixedModel(),
         db,
+        forward_mode="projection",
+        verification_mode="bronze_path_mean",
         retrieval_depth_K=3,
         evolution_paths=paths,
         known_correspondences={"unrelated": {"Regular": ["r3"]}},
@@ -291,6 +293,10 @@ def test_prepare_train_evaluate_checkpoint_pipeline(tmp_path):
             data / "databases",
             "--evolution_paths",
             data / "evolution_paths.json",
+            "--verification_mode",
+            "bronze_path_mean",
+            "--forward_mode",
+            "projection",
             "--output_dir",
             evaluation,
         ]
@@ -327,6 +333,8 @@ def test_prepare_train_evaluate_checkpoint_pipeline(tmp_path):
             data / "databases",
             "--evolution_paths",
             sp,
+            "--verification_mode",
+            "stepwise_modern",
             "--output",
             thresholds,
         ]
@@ -350,6 +358,19 @@ def test_prepare_train_evaluate_checkpoint_pipeline(tmp_path):
             tmp_path / "stepwise_eval",
         ]
     )
+    final_thresholds = tmp_path / "final_thresholds.json"
+    run([repo / "scripts/fit_pruning_thresholds.py", "--checkpoint", out / "best_model.pt",
+         "--data_dir", data, "--database_dir", data / "databases", "--evolution_paths", sp,
+         "--output", final_thresholds])
+    run([repo / "src/evaluate.py", "--checkpoint", out / "best_model.pt",
+         "--data_dir", data, "--database_dir", data / "databases", "--evolution_paths", sp,
+         "--pruning_thresholds", final_thresholds, "--output_dir", tmp_path / "final_eval"])
+    final_metrics = json.loads((tmp_path / "final_eval/metrics.json").read_text())
+    assert final_metrics["verification_mode"] == "observed_checkpoint"
+    assert final_metrics["forward_mode"] == "flow" and final_metrics["total_queries"] == 1
+    final_prediction = json.loads((tmp_path / "final_eval/predictions.jsonl").read_text())
+    assert all(-1.000001 <= v <= 1.000001 for v in final_prediction["candidate_scores"].values())
+    assert [r["era"] for r in final_prediction["survival_checks"]] in (["Bronze"], ["Bronze", "Seal"])
     original_config = (out / "config.json").read_bytes()
     repeated = subprocess.run(
         [
@@ -636,6 +657,8 @@ def test_cbed_underflow_preserves_ranking_and_log_scores():
     cb = CascadedBidirectionalDecipherment(
         FixedModel(),
         db,
+        forward_mode="projection",
+        verification_mode="bronze_path_mean",
         retrieval_depth_K=2,
         evolution_paths={
             "A": [dict(bronze_id="a", source="test")],

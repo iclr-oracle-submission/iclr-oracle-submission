@@ -580,7 +580,7 @@
     },
     {
       "id": "evaluate_appendix_h",
-      "paper_section": "Main results / CBED / backward micro-analysis",
+      "paper_section": "Earlier-manuscript legacy comparison",
       "entrypoint": "src/evaluate.py",
       "required_inputs": [
         "checkpoint",
@@ -599,13 +599,17 @@
         "--evolution_paths",
         "{paths}",
         "--output_dir",
-        "{output}"
+        "{output}",
+        "--verification_mode",
+        "bronze_path_mean",
+        "--forward_mode",
+        "projection"
       ],
       "protocol": "Bronze-path mean coordinates, exp(-distance)."
     },
     {
       "id": "evaluate_stepwise_modern",
-      "paper_section": "Main results / CBED / backward micro-analysis",
+      "paper_section": "Earlier-manuscript legacy comparison",
       "entrypoint": "src/evaluate.py",
       "required_inputs": [
         "checkpoint",
@@ -631,7 +635,7 @@
         "--pruning_thresholds",
         "{thresholds}"
       ],
-      "protocol": "Main text: actual modern-to-ancient occurrence prototypes; validation-fitted distance cutoffs."
+      "protocol": "Legacy complete-prototype verifier; use legacy-version validation thresholds."
     },
     {
       "id": "evaluate_no_backward",
@@ -666,7 +670,8 @@
       "required_inputs": [
         "checkpoint",
         "prepared_data",
-        "paths"
+        "paths",
+        "thresholds"
       ],
       "arguments": [
         "--checkpoint",
@@ -681,7 +686,9 @@
         "{paths}",
         "--output_dir",
         "{output}",
-        "--disable_cascade"
+        "--disable_cascade",
+        "--pruning_thresholds",
+        "{thresholds}"
       ],
       "protocol": "Direct Regular retrieval."
     },
@@ -708,7 +715,7 @@
         "--output_dir",
         "{output}",
         "--verification_mode",
-        "stepwise_modern",
+        "observed_checkpoint",
         "--disable_pruning"
       ],
       "protocol": "Same prototype paths without threshold pruning."
@@ -720,7 +727,8 @@
       "required_inputs": [
         "checkpoint",
         "prepared_data",
-        "paths"
+        "paths",
+        "thresholds"
       ],
       "arguments": [
         "--checkpoint",
@@ -735,7 +743,9 @@
         "{paths}",
         "--output_dir",
         "{output}",
-        "--disable_survival"
+        "--disable_survival",
+        "--pruning_thresholds",
+        "{thresholds}"
       ],
       "protocol": "Retain all queries before retrieval."
     },
@@ -746,7 +756,8 @@
       "required_inputs": [
         "checkpoint",
         "prepared_data",
-        "paths"
+        "paths",
+        "thresholds"
       ],
       "arguments": [
         "--checkpoint",
@@ -762,7 +773,9 @@
         "--output_dir",
         "{output}",
         "--forward_mode",
-        "flow"
+        "flow",
+        "--pruning_thresholds",
+        "{thresholds}"
       ],
       "protocol": "ODE-transport retrieval version."
     },
@@ -773,7 +786,8 @@
       "required_inputs": [
         "checkpoint",
         "prepared_data",
-        "paths"
+        "paths",
+        "thresholds"
       ],
       "arguments": [
         "--checkpoint",
@@ -789,7 +803,9 @@
         "--output_dir",
         "{output}",
         "--active_eras",
-        "Regular"
+        "Regular",
+        "--pruning_thresholds",
+        "{thresholds}"
       ],
       "protocol": "Training era config and inference eras must be matched."
     },
@@ -800,7 +816,8 @@
       "required_inputs": [
         "checkpoint",
         "prepared_data",
-        "paths"
+        "paths",
+        "thresholds"
       ],
       "arguments": [
         "--checkpoint",
@@ -817,7 +834,9 @@
         "{output}",
         "--active_eras",
         "Bronze",
-        "Regular"
+        "Regular",
+        "--pruning_thresholds",
+        "{thresholds}"
       ],
       "protocol": "Training era config and inference eras must be matched."
     },
@@ -828,7 +847,8 @@
       "required_inputs": [
         "checkpoint",
         "prepared_data",
-        "paths"
+        "paths",
+        "thresholds"
       ],
       "arguments": [
         "--checkpoint",
@@ -846,7 +866,9 @@
         "--active_eras",
         "Bronze",
         "Seal",
-        "Regular"
+        "Regular",
+        "--pruning_thresholds",
+        "{thresholds}"
       ],
       "protocol": "Training era config and inference eras must be matched."
     },
@@ -857,7 +879,8 @@
       "required_inputs": [
         "checkpoint",
         "prepared_data",
-        "paths"
+        "paths",
+        "thresholds"
       ],
       "arguments": [
         "--checkpoint",
@@ -876,7 +899,9 @@
         "Bronze",
         "Seal",
         "Clerical",
-        "Regular"
+        "Regular",
+        "--pruning_thresholds",
+        "{thresholds}"
       ],
       "protocol": "Training era config and inference eras must be matched."
     },
@@ -899,7 +924,8 @@
       "required_inputs": [
         "checkpoint",
         "prepared_data",
-        "paths"
+        "paths",
+        "thresholds"
       ],
       "arguments": [
         "--checkpoint",
@@ -913,7 +939,9 @@
         "--evolution_paths",
         "{paths}",
         "--output_dir",
-        "{output}"
+        "{output}",
+        "--pruning_thresholds",
+        "{thresholds}"
       ],
       "protocol": "External manifests require source-bearing label-free features and frozen official populations."
     },
@@ -925,7 +953,8 @@
         "checkpoint",
         "prepared_data",
         "paths",
-        "query_manifest"
+        "query_manifest",
+        "thresholds"
       ],
       "arguments": [
         "--checkpoint",
@@ -941,7 +970,9 @@
         "--output_dir",
         "{output}",
         "--query_manifest",
-        "{query_manifest}"
+        "{query_manifest}",
+        "--pruning_thresholds",
+        "{thresholds}"
       ],
       "protocol": "External manifests require source-bearing label-free features and frozen official populations."
     },
@@ -953,7 +984,8 @@
         "checkpoint",
         "prepared_data",
         "paths",
-        "query_manifest"
+        "query_manifest",
+        "thresholds"
       ],
       "arguments": [
         "--checkpoint",
@@ -969,7 +1001,9 @@
         "--output_dir",
         "{output}",
         "--query_manifest",
-        "{query_manifest}"
+        "{query_manifest}",
+        "--pruning_thresholds",
+        "{thresholds}"
       ],
       "protocol": "External manifests require source-bearing label-free features and frozen official populations."
     },
@@ -1135,6 +1169,36 @@
       ],
       "arguments": [],
       "protocol": "Query-level paired exact McNemar and optional t-test; does not substitute for seed-level tests."
+    },
+    {
+      "id": "evaluate_observed_checkpoint",
+      "paper_section": "Final manuscript Appendix G Algorithm 1",
+      "entrypoint": "src/evaluate.py",
+      "required_inputs": [
+        "checkpoint",
+        "prepared_data",
+        "paths",
+        "thresholds"
+      ],
+      "arguments": [
+        "--checkpoint",
+        "{checkpoint}",
+        "--data_dir",
+        "{prepared_data}",
+        "--database_dir",
+        "{prepared_data}/databases",
+        "--known_correspondences",
+        "{prepared_data}/correspondences.json",
+        "--evolution_paths",
+        "{paths}",
+        "--output_dir",
+        "{output}",
+        "--verification_mode",
+        "observed_checkpoint",
+        "--pruning_thresholds",
+        "{thresholds}"
+      ],
+      "protocol": "Progressive ODE, accumulated Reach, matched-time partial-path checks, maximum valid-path cosine; all queries retained."
     }
   ]
 }

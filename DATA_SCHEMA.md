@@ -34,7 +34,7 @@ The `stepwise_modern` verifier takes `{candidate_character:[{source:"edition ide
 
 ## Source adapter
 
-`CCAMCSourceDataset(data_root)` addresses all original occurrences. Unsupported categories and missing assets return `features:null`; `eligible_indices` explicitly identifies actual image-bearing OBI/Bronze items. `metadata/model_input_index.jsonl.gz` retains every occurrence ID, source dynasty/period and linked path. Exact recognized subperiod labels map to Table 1 centers; otherwise the model receives an explicit `era_center_default` time resolution. Unknown source categories have `era:null,time:null`. No source period is overwritten.
+`CCAMCSourceDataset(data_root)` addresses all original occurrences. Unsupported categories and missing assets return `features:null`; `eligible_indices` explicitly identifies actual image-bearing OBI/Bronze items. `metadata/model_input_index.jsonl.gz` retains every occurrence ID, source dynasty/period and linked path. Scribal-group and source-period labels remain separate metadata. Automatic adaptation uses a declared era checkpoint (`era_checkpoint_default`), without assigning chronological bins from scribal-group labels. Source-justified finer observation times may be supplied explicitly. Unknown source categories have `era:null,time:null`. No source period is overwritten.
 
 ## External queries and predictions
 
@@ -47,3 +47,7 @@ The optional association adapter consumes a JSON list with `query_id`, `question
 ## Additional annotations
 
 Radical/formation/scribal/error grouping consumes explicit occurrence or population attributes. Expert ratings require actual rater and case identifiers. Latent expressions specify real occurrence IDs and coefficients plus a fixed gallery. Shape manifests contain `char_id`, `occurrence_id`, `era`, `image`, `source` and optional independently annotated `stroke_count`. No semantic labels, expert ratings, later-era glyphs or survival outcomes are generated from a source image automatically.
+
+## Final-manuscript reference paths
+
+For default CBED, `evolution_paths` maps candidate identities to source-backed paths, for example `{"A":[{"source":"edition / plate","occurrences":{"Regular":"rA","Bronze":"bA"}}]}`. Regular is required; intermediate observations may be missing. A Regular-only path is valid with endpoint-only verification. Every supplied ID must belong to the same candidate identity in its era database. Occurrence IDs must be globally unique. Reference graph edges must be time ordered and must exclude held-out query IDs, their source IDs and answer-bearing edges. Missing reference observations are not zero feature vectors.

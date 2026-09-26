@@ -42,10 +42,11 @@ def model_record(row):
         char_id=row["character"],
         character=row["character"],
         era=era,
-        time=ERA_TIMES[subperiod or era] if era else None,
+        time=ERA_TIMES[era] if era else None,
         subperiod=subperiod,
+        scribal_group=row.get("version_subgroup"),
         time_resolution=(
-            ("subperiod_center" if subperiod else "era_center_default") if era else None
+            "era_checkpoint_default" if era else None
         ),
         source_period=row.get("period"),
         source_dynasty=row.get("dynasty"),

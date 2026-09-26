@@ -2,7 +2,7 @@
 Configuration module for MSEF (Manifold-based Script Evolution Framework).
 
 Model settings and configurable defaults; see IMPLEMENTATION.md.
-Era time values follow Table 1 and Appendix C.
+Era time values follow Table 1 and Appendix K.
 """
 
 import math
@@ -51,7 +51,7 @@ class MSEFConfig:
         lambda_skip: Weight for skip-era evolution loss (lambda_2)
         lambda_full: Weight for full-trajectory evolution loss (lambda_3)
         lambda_cyc: Weight for cycle-consistency loss (lambda_4)
-        lambda_surv: Weight of the independently optimized survival BCE (Table 28)
+        lambda_surv: Weight of the independently optimized survival BCE (implementation schedule)
 
     Inference Parameters (Algorithm 1):
         retrieval_depth_K: Number of nearest neighbors to retrieve per era
@@ -113,7 +113,7 @@ class MSEFConfig:
     era_times: Dict[str, float] = None
 
     def __post_init__(self):
-        """Initialize era time mappings using historically-grounded values (Table 1)."""
+        """Initialize era time mappings using declared model values (Table 1)."""
         for name in (
             "manifold_dim",
             "manifold_num_layers",
@@ -189,9 +189,9 @@ class MSEFConfig:
         if not set(self.training_eras) <= set(self.eras):
             raise ValueError("Unknown training era")
         if self.era_times is None:
-            # Historically-grounded normalized time values (Table 1, Appendix C)
-            # OBI: center of [0.00, 0.10]
-            # Bronze: center of [0.15, 0.55]
+            # Declared model checkpoints (Table 1, Appendix K)
+            # OBI checkpoint in [0.00, 0.30)
+            # Bronze checkpoint in [0.30, 0.70)
             # Seal: 0.70
             # Clerical: 0.85
             # Regular: 1.00

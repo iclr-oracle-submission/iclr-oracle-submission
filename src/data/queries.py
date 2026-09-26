@@ -32,7 +32,7 @@ class BenchmarkQueryDataset(Dataset):
         for r in rows:
             if not r.get("source") or r.get("input_visibility") != "label_free":
                 raise ValueError("Query requires source and input visibility")
-            if not 0 <= float(r.get("time", 0.05)) <= 0.1:
+            if not 0 <= float(r.get("time", 0.05)) < 0.30:
                 raise ValueError("CBED benchmark queries must be OBI observations")
             if r.get("definition"):
                 raise ValueError("Benchmark query exposes an answer definition")

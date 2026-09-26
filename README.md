@@ -55,8 +55,11 @@ The default schedule is 100 evolution epochs followed by 20 survival epochs, wit
 ## Evaluate
 
 ```bash
-python src/evaluate.py --checkpoint runs/seed42/best_model.pt --data_dir prepared_data --database_dir prepared_data/databases --known_correspondences prepared_data/correspondences.json --evolution_paths prepared_data/evolution_paths.json --output_dir results/seed42
+python scripts/fit_pruning_thresholds.py --checkpoint runs/seed42/best_model.pt --data_dir prepared_data --database_dir prepared_data/databases --evolution_paths prepared_data/evolution_paths.json --output runs/seed42/thresholds.json
+python src/evaluate.py --checkpoint runs/seed42/best_model.pt --data_dir prepared_data --database_dir prepared_data/databases --known_correspondences prepared_data/correspondences.json --evolution_paths prepared_data/evolution_paths.json --pruning_thresholds runs/seed42/thresholds.json --output_dir results/seed42
 ```
+
+The default follows final-manuscript Appendix G Algorithm 1: progressive ODE retrieval, survival checks through Seal, observed-checkpoint verification with partial paths, and maximum valid-path cosine scores. Supply source-backed paths in the `occurrences` format described in `DATA_SCHEMA.md`.
 
 Outputs include per-query ranked candidates, scores and log-scores, visual/source pointers, path evidence and population-level metrics. All labeled queries remain in the evaluation denominator. Five-run aggregation is available in `scripts/summarize_runs.py`. Four-choice association predictions are scored separately by `scripts/evaluate_pictobi.py`.
 

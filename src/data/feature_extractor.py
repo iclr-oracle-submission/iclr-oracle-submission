@@ -1,4 +1,4 @@
-"""Offline five-modality features (Appendix M).
+"""Offline five-modality features (Appendix L).
 
 No character ID is used as a feature. Learned 42/64/16D projections and CNN
 blocks are supplied as frozen, provenance-recorded vectors. The visual block
@@ -180,7 +180,7 @@ class ContextFeatureExtractor:
     def extract(self, cooccurring_features=None, projection=None):
         if cooccurring_features is None or len(cooccurring_features) == 0:
             return np.zeros(64, dtype=np.float32)
-        # Appendix M Eq.37: project concatenated visual/structural/semantic
+        # Appendix L context descriptor: project concatenated visual/structural/semantic
         # vectors of OTHER occurrences from the SAME artifact; then average.
         a = np.stack(
             [vector(v, 256, "cooccurring feature") for v in cooccurring_features]

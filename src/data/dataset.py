@@ -82,7 +82,7 @@ class FGCCESDataset(Dataset):
                     if o["era"] not in MAIN_PERIODS:
                         raise ValueError("Unknown era")
                     lo, hi = ERA_RANGES[o["era"]]
-                    if not lo <= o["time"] <= hi or not o.get("source"):
+                    if not (lo <= o["time"] < hi or o["era"] == "Regular" and o["time"] == 1.0) or not o.get("source"):
                         raise ValueError("Invalid time or missing provenance")
                 gap = MAIN_PERIODS.index(b["era"]) - MAIN_PERIODS.index(a["era"])
                 if gap <= 0:

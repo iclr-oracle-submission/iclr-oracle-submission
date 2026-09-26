@@ -17,6 +17,7 @@ def main():
         p.add_argument("--" + k, required=True)
     p.add_argument("--quantile", type=float, default=0.95)
     p.add_argument("--device", default="cpu")
+    p.add_argument("--verification_mode", choices=["observed_checkpoint", "stepwise_modern"], default="observed_checkpoint")
     a = p.parse_args()
     if not 0 < a.quantile <= 1:
         raise ValueError("Invalid validation quantile")
@@ -28,7 +29,7 @@ def main():
         db,
         device=a.device,
         evolution_paths=paths,
-        verification_mode="stepwise_modern",
+        verification_mode=a.verification_mode,
         stepwise_pruning=False,
         survival_check=False,
     )
@@ -55,13 +56,16 @@ def main():
                 for step in path["checkpoints"]:
                     values[step["era"]].append(step["distance"])
             used.append(sample["query_id"])
-    if any(not v for v in values.values()):
-        raise ValueError("Validation lacks complete positive lineage checkpoints")
+    if not values["OBI"]:
+        raise ValueError("Validation lacks positive endpoint verification paths")
+    if a.verification_mode == "stepwise_modern" and any(not v for v in values.values()):
+        raise ValueError("Legacy stepwise validation requires complete paths")
     digest = hashlib.sha256()
     with Path(a.checkpoint).open("rb") as handle:
         for block in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(block)
     doc = dict(
+        verification_mode=a.verification_mode,
         checkpoint_sha256=digest.hexdigest(),
         fit_split="val",
         quantile=a.quantile,
@@ -71,7 +75,7 @@ def main():
         checkpoint_seed=torch.load(
             a.checkpoint, map_location="cpu", weights_only=False
         ).get("seed"),
-        thresholds={e: float(np.quantile(v, a.quantile)) for e, v in values.items()},
+        thresholds={e: float(np.quantile(v, a.quantile)) for e, v in values.items() if v},
         observations={e: len(v) for e, v in values.items()},
     )
     Path(a.output).parent.mkdir(parents=True, exist_ok=True)

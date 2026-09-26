@@ -102,12 +102,12 @@ def main():
     p.add_argument("--evolution_paths")
     p.add_argument("--disable_cascade", action="store_true")
     p.add_argument(
-        "--forward_mode", choices=["projection", "flow"], default="projection"
+        "--forward_mode", choices=["projection", "flow"], default="flow"
     )
     p.add_argument(
         "--verification_mode",
-        choices=["bronze_path_mean", "stepwise_modern"],
-        default="bronze_path_mean",
+        choices=["bronze_path_mean", "stepwise_modern", "observed_checkpoint"],
+        default="observed_checkpoint",
     )
     p.add_argument("--disable_pruning", action="store_true")
     p.add_argument("--pruning_thresholds")
@@ -145,7 +145,9 @@ def main():
     query_ids = {r["query_id"] for r in dataset.samples} | {
         r.get("source_id", r["query_id"]) for r in dataset.samples
     }
-    if query_ids.intersection(relations):
+    graph_targets = {oid for links in relations.values() for targets in links.values() for oid in targets}
+    gallery_ids = {oid for records in db.values() for oid in records}
+    if query_ids.intersection(set(relations) | graph_targets | gallery_ids):
         raise ValueError("Query-answer correspondences would leak test labels")
     threshold_doc = (
         json.loads(Path(args.pruning_thresholds).read_text())
@@ -153,6 +155,8 @@ def main():
         else None
     )
     if threshold_doc:
+        if threshold_doc.get("verification_mode", "stepwise_modern") != args.verification_mode:
+            raise ValueError("Pruning calibration used a different verifier")
         digest = hashlib.sha256()
         with Path(args.checkpoint).open("rb") as handle:
             for block in iter(lambda: handle.read(1024 * 1024), b""):

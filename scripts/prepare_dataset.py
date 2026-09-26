@@ -4,7 +4,7 @@
 Input JSON contains occurrences, splits, survival, queries, correspondences,
 evolution_paths and feature_provenance. No inferred label joins or random split.
 Use --frozen_features to retain original 352D .npy vectors exactly. Otherwise
-extract Appendix M descriptor variant from rasters plus supplied frozen blocks.
+extract Appendix L descriptor variant from rasters plus supplied frozen blocks.
 """
 import argparse
 import json

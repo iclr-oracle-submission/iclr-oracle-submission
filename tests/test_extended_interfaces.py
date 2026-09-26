@@ -39,12 +39,12 @@ def test_ccamc_exact_mapping_preserves_source_category():
         version_subgroup="賓組",
     )
     mapped = model_record(row)
-    assert mapped["time"] == 0.01 and mapped["source_period"] == "商代晚期"
+    assert mapped["time"] == 0.05 and mapped["source_period"] == "商代晚期"
     row["script_type"] = "楚簡"
     mapped = model_record(row)
     assert mapped["era"] is None and mapped["time"] is None
     row.update(script_type="金文", dynasty="西周早期")
-    assert model_record(row)["time"] == 0.2
+    assert model_record(row)["time"] == 0.35
 
 
 def test_head_mask_all_ones_reproduces_attention_and_modalities_disabled():
@@ -147,6 +147,7 @@ def test_stepwise_uses_real_paths_and_finite_validation_thresholds():
         retrieval_depth_K=2,
         evolution_paths=paths,
         verification_mode="stepwise_modern",
+        forward_mode="projection",
         pruning_thresholds={e: 0.1 for e in ["Bronze", "Seal", "Clerical", "OBI"]},
     )
     o = cb.decipher_single(f)
